@@ -35,13 +35,13 @@ with open(csvpath,encoding='UTF-8') as csvfile:
             VotesforCCS+=1
         elif Candidate =="Diana DeGette":
             VotesforDD+=1
-#got help for the +=1 code from ChatGPT    
+#ChatGPT--I got help for the +=1 code   
 
 numvotes=len(Ballot)
 percentofvoteRAD = VotesforRAD/numvotes*100
 percentRAD = "{:.3f}%".format(percentofvoteRAD)
 RADpad = "({:.0f})".format(VotesforRAD)
-#got help for the format code from Stack Overflow
+#got help for the format code from StackOverFlow
 
 percentofvoteCCS = VotesforCCS/numvotes*100
 percentCCS = "{:.3f}%".format(percentofvoteCCS)
