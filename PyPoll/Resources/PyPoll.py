@@ -2,9 +2,9 @@ import os
 
 import csv
 
-
+#Find the csv file
 csvpath=os.path.join("..","MODULE 3 ASSIGNMENT","PyPoll", "Resources","election_data.csv")
-
+#Create the variables I will use throughout, this list was created in an iterative process
 Ballot=[]
 County=[]
 Candidate=[]
@@ -19,12 +19,12 @@ VotesforRAD = 0
 VotesforCCS=0
 VotesforDD=0
 
-
+#Import the csv file
 with open(csvpath,encoding='UTF-8') as csvfile:
     csvreader = csv.reader(csvfile,delimiter=",")
-
+#Skip the header row
     next(csvreader)
-
+#Create variables for each candidate, counting the number of ballots (i.e., rows) per candidate
     for row in csvreader:
         Ballot.append(int(row[0]))
         Candidate=row[2]
@@ -37,6 +37,7 @@ with open(csvpath,encoding='UTF-8') as csvfile:
             VotesforDD+=1
 #ChatGPT--I got help for the +=1 code   
 
+#Find the total number of rows (i.e., ballots), then calculate the percentage of the vote for each candidate using that value
 numvotes=len(Ballot)
 percentofvoteRAD = VotesforRAD/numvotes*100
 percentRAD = "{:.3f}%".format(percentofvoteRAD)
@@ -53,9 +54,7 @@ DDpad = "({:.0f})".format(VotesforDD)
 
 #The three candidates are Raymon Anthony Doane, Charles Casper Stockham, and Diana DeGette
 #for candidate in unique_candidates:
-#    print(candidate)
-    
-        
+#    print(candidate)      
            
 print("Election Results")
 print("-------------------------")
